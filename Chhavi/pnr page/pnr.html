@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aawaz - PNR</title>
+    <link rel="stylesheet" type="text/css" href="pnr.css" />
+  </head>
+  <body style="background-color: #eee; font-family: 'Oxygen', sans-serif">
+    <div class="navclass">
+      <nav style="height: 115px; ">
+        <div class="logo">
+          <img src="./logo.png" alt="Logo" />
+        </div>
+        <div class="Emblem">
+          <img src="Emblem.png" alt="Logo" />
+        </div>
+        <ul class="options">
+          <li><a  href="http://127.0.0.1:5500/home%20page/index.html">Home</a></li>
+          <li><a href="#emergency">Emergency</a></li>
+           
+          <li><a href="#FAQ">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="pnr-form">
+      <h2>PNR Status Checker</h2>
+      <form id="pnr-check-form">
+        <br />
+        <label for="pnr">Enter PNR Number:</label>
+
+        <br />
+        <input type="text" id="pnr" name="pnr" required />
+        <br />
+        <br />
+        <button type="button" onclick="checkPNR()">Check Status</button>
+      </form>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function checkPNR() {
+        var pnrNumber = document.getElementById("pnr").value;
+        // You can implement the logic to check the PNR status here
+        // For now, let's just display a message
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML =
+          "<p>PNR Status for PNR " + pnrNumber + ": Not Available</p>";
+      }
+    </script>
+  </body>
+</html>
