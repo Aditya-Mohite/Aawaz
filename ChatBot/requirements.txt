@@ -1,3 +1,7 @@
 streamlit
-threading
-translator
+streamlit==1.18.0
+googletrans==4.0.0-rc1
+requests==2.26.0
+pydub==0.26.7
+gTTS==2.2.3
+
