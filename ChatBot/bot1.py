@@ -140,8 +140,7 @@ if selected_language == "मराठी":
     language_code = "mr"
 elif selected_language == "English":
     language_code = "en"
-    audio_file_path = os.path.join(AUDIO_FOLDER_PATH, 'Dindigul_english.mp3')
-    st.audio(audio_file_path, format="audio/mp3", start_time=0)
+    
 elif selected_language == "தமிழ்":
     language_code = "ta"
 elif selected_language == " हिंदी ":
