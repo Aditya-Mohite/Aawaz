@@ -12,6 +12,7 @@ RAPIDAPI_KEY = "24a6ebe7d2msh31370e8035ac91bp1d14adjsn5f6c48f9f363"  # Replace w
 AUDIO_FOLDER_PATH = os.path.dirname(os.path.abspath(__file__))  # Replace with the actual path to your 'static' folder
 
 # Function to translate text using Google Text-to-Speech Translator
+# Function to translate text using Google Text-to-Speech Translator
 def translate_to_selected_language(text, selected_language):
     translator = Translator()
     translated_text = translator.translate(text, dest=selected_language)
