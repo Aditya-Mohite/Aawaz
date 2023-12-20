@@ -9,7 +9,7 @@ import os
 RAPIDAPI_KEY = "24a6ebe7d2msh31370e8035ac91bp1d14adjsn5f6c48f9f363"  # Replace with your RapidAPI key
 
 # Set the path to your 'static' folder
-AUDIO_FOLDER_PATH = os.path.dirname(os.path.abspath(_file_))  # Replace with the actual path to your 'static' folder
+AUDIO_FOLDER_PATH = os.path.dirname(os.path.abspath(__file__))  # Replace with the actual path to your 'static' folder
 
 # Function to translate text using Google Text-to-Speech Translator
 def translate_to_selected_language(text, selected_language):
@@ -130,32 +130,32 @@ def play_audio_thread(language_code):
 
 # Main content based on user option
 # Main content based on user option
-st.title("Welcome to Aawaz")
+st.title("Aawaz")
 # Language selection
-selected_language = st.sidebar.selectbox("Select Language", ["Marathi", "English", "Tamil", "Hindi"])
+selected_language = st.sidebar.selectbox("Select Language", ["मराठी", "English", "தமிழ்", " हिंदी "])
 
 # Options based on language
-if selected_language == "Marathi":
+if selected_language == "मराठी":
     language_code = "mr"
 elif selected_language == "English":
     language_code = "en"
     audio_file_path = os.path.join(AUDIO_FOLDER_PATH, 'Dindigul_english.mp3')
     st.audio(audio_file_path, format="audio/mp3", start_time=0)
-elif selected_language == "Tamil":
+elif selected_language == "தமிழ்":
     language_code = "ta"
-elif selected_language == "Hindi":
+elif selected_language == " हिंदी ":
     language_code = "hi"
 
 # Main content based on user option
 option = st.sidebar.selectbox("Select an option", ("PNR Status", "Live Train Status", "Trains Between Stations", "Recent Announcement", "Ask Anything"))
 
 # Translate the entire Streamlit page
-if st.button("Translate", key="translate_button"):
-    st.text("Translating... This may take a moment.")
-    st.caching.clear_cache()
-    st.experimental_rerun()
+# if st.button("Translate", key="translate_button"):
+#     st.text("Translating... This may take a moment.")
+#     st.caching.clear_cache()
+#     st.experimental_rerun()
 # Create a placeholder for the announcement option
-announcement_placeholder = st.empty()
+# announcement_placeholder = st.empty()
 
 if option == "PNR Status":
     st.subheader(translate_text("PNR Status", language_code))
@@ -205,11 +205,11 @@ if option == "Recent Announcement":
     st.subheader(translate_text("Recent Announcement", language_code))
     
     # Display language selection box for recent announcement
-    selected_language_recent = st.selectbox("Select Language", ["Marathi", "English", "Tamil", "Hindi", "French", "German"])
+    selected_language_recent = st.selectbox("Select Language", ["Marathi", "English", "Tamil", "Hindi"])
 
-    play_button_recent = st.button(f"Play Announcement in {selected_language_recent}", key="play_button_recent")
-    if play_button_recent:
-        play_announcement_audio(selected_language_recent.lower())
+    # play_button_recent = st.button(f"Play Announcement in {selected_language_recent}", key="play_button_recent")
+    # if play_button_recent:
+    #     play_announcement_audio(selected_language_recent.lower())
 
     # Show audio file after selecting language
     audio_file_path_recent = os.path.join(AUDIO_FOLDER_PATH, f'Dindigul_{selected_language_recent.lower()}.mp3')
